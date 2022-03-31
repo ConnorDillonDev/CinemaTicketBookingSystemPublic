@@ -57,7 +57,6 @@ Example of accounts,  in order of highest permissions to lowest.
 SuperUser996@cinema.com : password 
 StaffUser@gmail.com : password
 standarduser@gmail.com : password
-
 ```
 
 
