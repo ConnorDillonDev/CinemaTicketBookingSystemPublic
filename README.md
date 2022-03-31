@@ -1,7 +1,7 @@
 
 # Installation Guide
 
-Information & installtion guide.
+Information & installation guide.
 
 
 
