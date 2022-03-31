@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xGaaNPCXkz3Dh/spLsQJWHdFnL1ALGMDNhXSVpakfqtZTSX3Zh1KMhTh+f7+PqQmNSY4qj6TrakYDNggBIjfCQ==",
+  "dgSpecHash": "oCTxwuA2EIYQigR89Aina6IG6Zcbs7ckdkV6W6OgwMy3eEukBzM05vvgztD2xQBpkYSKfP+C2e169qbZDdjjTw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj",
+  "projectFilePath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\conno\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\conno\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

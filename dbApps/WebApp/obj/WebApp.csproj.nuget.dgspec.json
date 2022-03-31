@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\WebApp.csproj": {}
+    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\WebApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\Context.csproj": {
+    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\Context.csproj",
+        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\Context.csproj",
         "projectName": "Context",
-        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\Context.csproj",
+        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\Context.csproj",
         "packagesPath": "C:\\Users\\conno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\obj\\",
+        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\conno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj": {
-                "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj"
+              "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj": {
+                "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj": {
+    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj",
+        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj",
         "projectName": "Entities",
-        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\Entities.csproj",
+        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj",
         "packagesPath": "C:\\Users\\conno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Entities\\obj\\",
+        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\conno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -148,14 +148,14 @@
         }
       }
     },
-    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\WebApp.csproj": {
+    "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\WebApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\WebApp.csproj",
+        "projectUniqueName": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\WebApp.csproj",
         "projectName": "WebApp",
-        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\WebApp.csproj",
+        "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\WebApp.csproj",
         "packagesPath": "C:\\Users\\conno\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\obj\\",
+        "outputPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\conno\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -172,8 +172,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\Context.csproj": {
-                "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\Context\\Context.csproj"
+              "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\Context.csproj": {
+                "projectPath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Context\\Context.csproj"
               }
             }
           }
