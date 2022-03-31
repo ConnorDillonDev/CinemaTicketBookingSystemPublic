@@ -1,0 +1,66 @@
+@page
+
+@model WebApp.Pages.CreateBuildingModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-3">Create Building</h1>
+</div>
+<div class="card">
+    <form method="POST">
+        <div>
+            <p>Street ComplexName:</p>
+            <input asp-for="Building.ComplexName" required />
+        </div>
+        <br />
+        <div>
+            <p>Street Name:</p>
+            <input asp-for="Building.Street"required />
+        </div>
+        <br />
+        <div>
+            <p>Street Number:</p>
+            <input asp-for="Building.StreetNum"required />
+        </div>
+        <br />
+        <div>
+            <p>Building PostCode:</p>
+            <input asp-for="Building.PostCode"required />
+        </div>
+        <div>
+            <p>Building Full Address:</p>
+            <input asp-for="Building.Address" required />
+        </div>
+        <br />
+
+        <input type="submit" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+        @if(Model.PostResult == "added"){
+            <p class="text-success">Added Successfully</p>
+        }
+        else if(Model.PostResult == "invalid")
+        {<p class="text-danger">Invalid Submission</p>}
+        else if(Model.PostResult == "error")
+        {<p class="text-danger">Building Name Has Already Been Used!</p>}
+
+    </form>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name:</th>
+      <th scope="col">Street:</th>
+    </tr>
+  </thead>
+   <tbody>
+       @* iterate over the building present in the database *@
+        @foreach(Building b in Model.Buildings)
+        {
+            <tr>
+                <td>@b.ComplexName</td>
+                <td>@b.Street</td>
+            </tr>
+        }
+        </table>
+</div>

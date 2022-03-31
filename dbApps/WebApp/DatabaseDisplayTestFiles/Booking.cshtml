@@ -1,0 +1,19 @@
+@page
+@model WebApp.Pages.BookingModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<html>
+    <head>
+        <title>
+            View Booking
+        </title>
+    </head>
+    <body>
+        <p>@foreach(Booking x in Model.Bookings)
+        {
+            @x.BookingID<br>
+        }
+        </p>
+    </body>
+</html>

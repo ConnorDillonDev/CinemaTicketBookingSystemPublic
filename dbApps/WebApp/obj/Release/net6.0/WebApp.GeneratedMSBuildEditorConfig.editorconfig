@@ -1,0 +1,72 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = WebApp
+build_property.RootNamespace = WebApp
+build_property.ProjectDir = C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\WebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\WebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Actor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/AgeRating.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWdlUmF0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Booking.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9va2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Building.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnVpbGRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Create/CreateActor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlXENyZWF0ZUFjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Create/CreateBuilding.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3JlYXRlXENyZWF0ZUJ1aWxkaW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Genre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Movie.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTW92aWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/PossibleDiscount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9zc2libGVEaXNjb3VudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Showing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/Theatre.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGhlYXRyZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/conno/Documents/GitHub/CinemaTicketBookingSystem/dbApps/WebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

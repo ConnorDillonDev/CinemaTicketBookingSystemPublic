@@ -1,0 +1,83 @@
+@page
+
+@model WebApp.Pages.AccountManagementModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-3">Manage Accounts</h1>
+
+</div>
+<a class="btn btn-primary" href="../Staff/Admin">   Go Back   </a>
+    <p>Search by email</p>
+
+
+<form method="post">
+    <div class="input-group mb-3">
+        <input type="Email" class="form-control" placeholder="AccountEmail" asp-for="AccountEmail" required/>
+        <button type="submit" class="btn btn-success mx-1">Search</button>
+    </div>
+</form>
+
+@* if account  is found display the account *@
+@if(@Model.AccountFound != null){
+    <form method="POST">
+        <table class="table" id="update">
+            <thead> 
+                <th scope="col">Email</th>
+                <th scope="col">UserName</th>
+                <th scope="col">Password (reduced)</th>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">FullName</th>
+                <th scope="col">IsStaff</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.AccountFound.Email</td>
+                    <td>@Model.AccountFound.Username</td>
+                    @if(@Model.AccountFound.PasswordHash.Length > 10)
+                        {
+                            string trim = @Model.AccountFound.PasswordHash.Substring(0,10);
+                            <td>@trim</td>
+                        }
+                        else
+                        {
+                            <td>@Model.AccountFound.PasswordHash</td>
+                        }
+                    
+                    <td>@Model.AccountFound.FirstName</td>
+                    <td>@Model.AccountFound.LastName</td>
+                    <td>@Model.AccountFound.FullName</td>
+                    <td>@Model.AccountFound.IsStaff</td>
+                </tr>
+
+                <tr>
+                    <td><input type="hidden" value="@Model.AccountFound.Email" asp-for="UpdateAccount.Email" required/>@Model.AccountFound.Email</td>
+                    <td><input value="@Model.AccountFound.Username" asp-for="UpdateAccount.Username" required/></td>
+                    <td><input value="@Model.AccountFound.PasswordHash" asp-for="UpdateAccount.PasswordHash" required/></td>
+                    <td><input value="@Model.AccountFound.FirstName" asp-for="UpdateAccount.FirstName" required/></td>
+                    <td><input value="@Model.AccountFound.LastName" asp-for="UpdateAccount.LastName" required/></td>
+                    <td><input value="@Model.AccountFound.FullName" asp-for="UpdateAccount.FullName"required /></td>
+                    <td><input type="number" value="@Model.AccountFound.IsStaff" asp-for="UpdateAccount.IsStaff" min="0" max="1" required/></td>
+                </tr>
+                <input type="hidden" asp-for="route" value="update">
+            </tbody>
+            </table>
+            <div class="col-md-12 text-center">
+                <button style="center" type="submit" class="btn btn-warning">update</button>
+            </div>
+    </form>
+    }
+    else if(@Model.NotFound == true)
+    {
+        <h3 class="text-warning">Account Not Found!</h3>
+    }
+    @if (@Model.message == "Account Updated!")
+    {
+        <h3 class="text-success">@Model.message</h3>
+    }
+<script>
+$("#update").validate();
+</script>

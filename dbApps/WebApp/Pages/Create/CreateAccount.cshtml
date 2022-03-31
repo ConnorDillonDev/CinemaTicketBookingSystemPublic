@@ -1,0 +1,94 @@
+@page
+
+@model WebApp.Pages.CreateAccountModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-3">Create Account</h1>
+</div>
+<div class="card">
+    <form method="POST">
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" asp-for="Account.Email" required>
+            @* error is created onPost to the same page, if the email attempted to be used is already in the database *@
+            @if(@Model.Error == "error")
+            {
+                <div><p class ="text-danger">This Email Address Is Already In Use!</p></div>
+            }
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="FirstName">Name</label>
+                <input  class="form-control" id="firstname" placeholder="FirstName" asp-for="Account.FirstName" required>
+                <input  class="form-control" id="SecondName" placeholder="SecondName" asp-for="Account.LastName" required>
+                <label for="username">Username</label>
+
+                <input  class="form-control" id="username" placeholder="UserName" asp-for="Account.Username" required>
+        </div>
+        <div class="form-group">
+            <label for="PasswordInput">Password</label>
+            <input type="password" class="form-control" id="PasswordInput" placeholder="Password" asp-for="password" required>
+        </div>
+        <div class="form-group">
+            <label for="PasswordInput2">Password</label>
+            <input type="password" class="form-control" id="PasswordInput2" placeholder="Repeat-Password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Please Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      @* feedback that their account has been created *@
+      <div class="modal-body">
+       @if(@Model.Complete == "success")
+       {
+            <p>Your Account has been created please login</p>
+       }
+       else
+       {
+           <p>By Continuing you are agreeing to the terms and conditions</p>
+       }
+      </div>
+      <div class="modal-footer">
+        @* if displaying the the account was created successfully then show login button *@
+          @if(@Model.Complete == "success"){
+            <a type="button" href="/Login/Login" class="btn btn-primary">Login</a>
+          }
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script>
+    var password = document.getElementById("PasswordInput"), confirm_password = document.getElementById("PasswordInput2");
+
+function validatePassword(){
+  //ensure that password in password reapeat box matches the originial when creating an account
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+PasswordInput.onchange = validatePassword;
+PasswordInput2.onkeyup = validatePassword;
+
+//show the mosal when the page loads
+     $(window).on('load', function() {
+        $('#Modal').modal('show');
+    });
+</script>

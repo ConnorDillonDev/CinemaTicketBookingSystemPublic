@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "Entities"
+		},
+		{
+			"path": "Context"
+		},
+		{
+			"path": "WebApp"
+		}
+	],
+	"settings": {}
+}

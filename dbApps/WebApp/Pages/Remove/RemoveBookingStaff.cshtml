@@ -1,0 +1,144 @@
+@page
+
+@model WebApp.Pages.RemoveBookingStaffModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+
+
+<div class="row">
+    <h1 class="display-5">Search Booking ID To Remove</h1>
+</div>
+    <a class="btn btn-primary mx-1" href="../Staff/Manage">   Go Back   </a>
+
+<div class="card">
+    <form method="post">
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="BookingID" min="1" asp-for="SearchID">
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+    </form>
+    @if(@Model.message == "Not Found!")
+    {
+        <p class="text-warning">Not Found!</p>
+    }
+    else if (@Model.message == "Removed")
+    {
+        <p class="text-success">Removed</p>
+    }
+
+    <div id="ReturnedShowing">
+        @if(Model.TargetID > 0)
+        {
+            <form method="post">
+                <p class="text-success">Found:<p>
+                <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">BookingID</th>
+                <th scope="col">NumberInBooking</th>
+                <th scope="col">AdultTickets</th>
+                <th scope="col">ChildTickets</th>
+                <th scope="col">AgeRestriction</th>
+                <th scope="col">TotalPrice</th>
+                <th scope="col">ShowingID</th>
+                <th scope="col">Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >@Model.BookingSearch.BookingID</td>
+                        <input type="hidden" asp-for="BookingToDel.BookingID" value="@Model.BookingSearch.BookingID">
+
+
+                        <td>@Model.BookingSearch.NumberInBooking</td>
+                        <input type="hidden" asp-for="BookingToDel.NumberInBooking" value="@Model.BookingSearch.NumberInBooking">
+
+                        <td>@Model.BookingSearch.AdultTickets</td>
+                        <input type="hidden" asp-for="BookingToDel.AdultTickets" value="@Model.BookingSearch.AdultTickets">
+
+                        <td>@Model.BookingSearch.ChildTickets</td>
+                        <input type="hidden" asp-for="BookingToDel.ChildTickets" value="@Model.BookingSearch.ChildTickets">
+
+                        <td>@Model.BookingSearch.AgeRestriction</td>
+                        <input type="hidden" asp-for="BookingToDel.AgeRestriction" value="@Model.BookingSearch.AgeRestriction">
+
+                        <td>@Model.BookingSearch.TotalPrice</td>
+                        <input type="hidden" asp-for="BookingToDel.TotalPrice" value="@Model.BookingSearch.TotalPrice">
+
+                        <td>@Model.BookingSearch.ShowingID</td>
+                        <input type="hidden" asp-for="BookingToDel.ShowingID" value="@Model.BookingSearch.ShowingID">
+
+                        <td>@Model.BookingSearch.Email</td>
+                        <input type="hidden" asp-for="BookingToDel.Email" value="@Model.BookingSearch.Email">
+
+                        <td><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+                    </tr>
+                </table>
+            </form>
+        }
+    </div>
+</div>
+
+<div class="card">
+        <h1 class="display-3">All Bookings</h1>
+
+
+        @{int counter = 0;}
+        @foreach(Booking s in Model.Bookings)
+        {
+
+
+            counter = counter + 1;
+            <form method="post">
+            <table class="table table-bordered table-hover p-5">
+            @if (counter == 1)
+            {
+                <thead>
+                    <tr>
+                        <th scope="col">BookingID</th>
+                        <th scope="col">NumberInBooking</th>
+                        <th scope="col">AdultTickets</th>
+                        <th scope="col">ChildTickets</th>
+                        <th scope="col">AgeRestriction</th>
+                        <th scope="col">TotalPrice</th>
+                        <th scope="col">ShowingID</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+            }
+
+            <tr>
+                <td style="width: 150px;">@s.BookingID<input type="hidden" asp-for="BookingToDel.BookingID" value="@s.BookingID"></td>
+                
+
+                <td style="width: 150px;">@s.NumberInBooking<input type="hidden" asp-for="BookingToDel.NumberInBooking" value="@s.NumberInBooking"></td>
+                
+
+                <td style="width: 150px;">@s.AdultTickets<input type="hidden" asp-for="BookingToDel.AdultTickets" value="@s.AdultTickets"></td>
+                
+
+                <td style="width: 150px;">@s.ChildTickets<input type="hidden" asp-for="BookingToDel.ChildTickets" value="@s.ChildTickets"></td>
+                
+
+                
+                <td style="width: 150px;">@s.AgeRestriction<input type="hidden" asp-for="BookingToDel.AgeRestriction" value="@s.AgeRestriction"></td>
+                
+                
+                <td style="width: 150px;">@s.TotalPrice<input type="hidden" asp-for="BookingToDel.TotalPrice" value="@s.TotalPrice"></td>
+                
+                
+                <td style="width: 150px;">@s.ShowingID<input type="hidden" asp-for="BookingToDel.ShowingID" value="@s.ShowingID"></td>
+                
+                
+                <td style="width: 150px;">@s.Email<input type="hidden" asp-for="BookingToDel.Email" value="@s.Email"></td>
+                
+
+                
+                <td style="width: 150px;"><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+            </tr>
+            </table>
+        </form>
+        }
+</div>

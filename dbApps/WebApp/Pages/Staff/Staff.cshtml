@@ -1,0 +1,23 @@
+@page
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="mx-auto" style="width: 200px;">
+<table class="table table-striped">
+        <tr>
+        <th colspan="2" class="text-center">Staff Control</th>
+    </tr>
+    <tr>
+        <td class = "text-center"><a href="/Staff/Create">Create</a></td>
+        <td class = "text-center"><a href="/Staff/Manage">Manage</a></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="text-center"><a href="/Staff/Admin">ADMIN</a></td>
+    </tr>
+    </table>
+    <div class=text-center>
+            <a class="btn btn-primary" href="../Index">   Go Back   </a>
+    </div>
+</div>

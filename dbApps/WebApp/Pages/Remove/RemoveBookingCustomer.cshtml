@@ -1,0 +1,79 @@
+@page
+
+@model WebApp.Pages.RemoveBookingCustomerModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<div class="card">
+    <h1 class="display-3">Bookings for @Model.Email:</h1>
+    @if(@Model.BookingConfirmed == true)
+        {
+            <h2 class="text-success">Booking Confirmed</h2> //post ID submitted success
+        }
+     @if(@Model.BookingRemoved == true){
+        <h2 class="text-danger">Booking Removed</h2> // post ID succesfully removed
+     }
+       <div class="card-group">
+        @foreach(Booking b in Model.Bookings)
+        {
+            if(b.Email == @Model.Email){
+                <form method="post">
+                    <div class="card" style="width: 18rem; margin:5px;">
+                        @* use the html api for the QR display *@
+                        <img class="card-img-top" src="https://qrickit.com/api/qr.php?d=@Model.Email%20ID:@b.BookingID%20Total:@b.NumberInBooking" alt="bookingQR">
+                        <div class="card-body">
+                            <input type="hidden" id="@b.BookingID" asp-for="BookingIDToDel" value="@b.BookingID"/>
+                            @foreach(Showing s in @Model.Showings)
+                            {
+                                if(b.ShowingID == s.ShowingID){
+                                    <h5 class="card-title">@s.MovieName</h5>
+                                }
+                            }
+                            
+                            <h6 class="card-subtitle mb-2 text-muted"> Tickets: @b.NumberInBooking</h6>
+                            @foreach(Showing s in @Model.Showings)
+                            {
+                                if(b.ShowingID == s.ShowingID)
+                                {
+                                    <p class="card-text">Date: @s.Day <br/> Time: @s.StartTime.ToString("0.00").Replace(".",":")</p>
+                                }
+                                
+                            }
+                            @* <button type="submit" class="btn btn-danger">Cancel</button> *@
+                            
+                            @{string modal = @b.BookingID + "modal";}
+                            <div class="text-center">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#test">Cancel</button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="test" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ConfirmationModalLabel">Confirm Canellation</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p>Are you sure?</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-danger">Confirm Cancellation</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            }
+        }
+        
+        </div>
+</div>
+
+<script>
+</script>

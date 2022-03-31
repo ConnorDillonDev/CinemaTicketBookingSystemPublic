@@ -1,0 +1,19 @@
+@page
+@model WebApp.Pages.PossibleDiscountModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<html>
+    <head>
+        <title>
+            View PossibleDiscount
+        </title>
+    </head>
+    <body>
+        <p>@foreach(PossibleDiscount x in Model.PossibleDiscounts)
+        {
+            @x.DiscountCode<br>
+        }
+        </p>
+    </body>
+</html>

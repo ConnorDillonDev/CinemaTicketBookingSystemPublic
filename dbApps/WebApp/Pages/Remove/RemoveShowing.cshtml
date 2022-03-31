@@ -1,0 +1,120 @@
+@page
+
+@model WebApp.Pages.RemoveShowingModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+
+
+<div class="row">
+    <h1 class="display-5">Search Showing ID To Remove</h1>
+</div>
+                <a class="btn btn-primary" href="../Staff/Manage">   Go Back   </a>
+
+<div class="card">
+    <form method="post">
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" placeholder="ShowingID" min="1" asp-for="SearchID">
+            <button type="submit" class="btn btn-success mx-1">Search</button>
+        </div>
+
+    </form>
+
+
+
+    <div id="ReturnedShowing">
+        @if(Model.TargetID > 0)
+        {
+            <form method="post" >
+                <h3>Found:</h3>
+                <table class="table">
+                <thead>
+                <tr>
+                <th scope="col">ShowingID</th>
+                <th scope="col">Day</th>
+                <th scope="col">StartTime</th>
+                <th scope="col">ScreenNumber</th>
+                <th scope="col">MovieName</th>
+                <th scope="col">Remove</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >@Model.ShowingSearch.ShowingID</td>
+                        <input type="hidden" asp-for="ShowingToDel.ShowingID" value="@Model.ShowingSearch.ShowingID">
+
+
+                        <td>@Model.ShowingSearch.Day</td>
+                        <input type="hidden" asp-for="ShowingToDel.Day" value="@Model.ShowingSearch.Day">
+
+                        <td>@Model.ShowingSearch.StartTime</td>
+                        <input type="hidden" asp-for="ShowingToDel.StartTime" value="@Model.ShowingSearch.StartTime">
+
+                        <td>@Model.ShowingSearch.ScreenNum</td>
+                        <input type="hidden" asp-for="ShowingToDel.ScreenNum" value="@Model.ShowingSearch.ScreenNum">
+
+
+                        <td>@Model.ShowingSearch.MovieName</td>
+                        <input type="hidden" asp-for="ShowingToDel.MovieName" value="@Model.ShowingSearch.MovieName">
+
+                        <td><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+                    </tr>
+                </table>
+            </form>
+        }
+    </div>
+        @if(@Model.message == "Not Found!")
+    {
+        <p class="text-warning">Not Found!</p>
+    }
+    else if (@Model.message == "Removed")
+    {
+        <p class="text-success">Removed</p>
+    }
+</div>
+
+
+<div class="card">
+        <h1 class="display-3">All Showings</h1>
+
+
+        @{int counter = 0;}
+        @foreach(Showing s in Model.Showings)
+        {
+            counter = counter + 1;
+            <form method="post">
+                <table class="table  table-bordered table-hover p-5">
+                    @if (counter == 1)
+                    {
+                        <thead>
+                            <tr>
+                            <th scope="col">ShowingID</th>
+                            <th scope="col">Day</th>
+                            <th scope="col">StartTime</th>
+                            <th scope="col">ScreenNumber</th>
+                            <th scope="col">MovieName</th>
+                            <th scope="col">Remove</th>
+                            </tr>
+                        </thead>
+                    }
+                    <tbody>
+                        <tr>
+                            <td style="width: 150px;">@s.ShowingID<input type="hidden" asp-for="ShowingToDel.ShowingID" value="@s.ShowingID"/></td>
+                            
+                            <td style="width: 150px;">@s.Day<input type="hidden" asp-for="ShowingToDel.Day" value="@s.Day"/></td>
+
+                            <td style="width: 150px;">@s.StartTime<input type="hidden" asp-for="ShowingToDel.StartTime" value="@s.StartTime"/></td>
+
+                            <td style="width: 150px;">@s.ScreenNum<input type="hidden" asp-for="ShowingToDel.ScreenNum" value="@s.ScreenNum"/></td>
+                            
+                            <td style="width: 150px;">@s.MovieName<input type="hidden" asp-for="ShowingToDel.MovieName" value="@s.MovieName"/></td>
+                            
+                            <td style="width: 150px;"><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        }
+</div>
+

@@ -1,0 +1,45 @@
+@page
+
+@model WebApp.Pages.CreateDirectorModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-3">Create Director</h1>
+</div>
+<div class="card">
+    <p>Director Name:</p>
+    <form method="POST">
+        <div>
+            <input asp-for="Director.DirectorName" required />
+        </div>
+        <br />
+
+        <input type="submit" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+        @if(Model.PostResult == "added"){
+            <p class="text-success">Added Successfully</p>
+        }
+        else if(Model.PostResult == "invalid")
+        {<p class="text-danger">Invalid Submission</p>}
+        
+    </form>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+   <tbody>
+       @* iterate over all direcors to show them on page *@
+        @foreach(Director act in Model.Directors)
+        {
+            <tr>
+                <td>@act.DirectorID</td>
+                <td>@act.DirectorName</td>
+            </tr>
+        }
+        </table>
+</div>

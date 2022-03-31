@@ -1,0 +1,89 @@
+@page
+
+@model WebApp.Pages.CreateShowingModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker({minDate: 0, dateFormat: 'dd-mm-yy'});
+  } );
+  </script>
+
+
+<div class="row">
+    <h1 class="display-3">Create showing</h1>
+</div>
+<div class="card">
+    <form method="POST" id="createshowingforum">
+        @* entity modal requirments to create a showing within the form post *@
+        <div>
+            <p>Date of showing</p>
+            <p>Date: <input type="text" asp-for="showing.Day" id="datepicker" required></p>
+
+            @* <input type="date" asp-for="showing.Day" id="showingdate" min="" required /> *@
+        </div>
+        <br />
+        <div>
+            <p>Start Time (14.40):</p> @if(@Model.Message == "invalid"){<p class="text-danger">Invalid Date (please use the convetion shown above)</p>}
+            <input asp-for="showing.StartTime" id="time" required />
+        </div>
+        <br />
+        <br />
+            <div>
+                <p>Movie Title:</p>
+             <select asp-for="showing.MovieName" name="showing.MovieName" id="showing.MovieName">
+
+            @for (int c = 0; c < Model.Movies.Count; c++)
+            {
+                //list of all the current movies in the database
+                <option value=@Model.Movies[c].MovieName>@Model.Movies[c].MovieName</option>
+            }
+
+            </select>
+        </div>
+
+         <div>
+            <p>Screen ID:</p>
+             <select asp-for="showing.ScreenNum" name="showing.ScreenNum" id="showing.ScreenNum">
+
+            @for (int c = 0; c < Model.Theatres.Count; c++)
+            {
+                //list of all the possible screen numbers
+                <option value=@Model.Theatres[c].ScreenNum>@Model.Theatres[c].ScreenNum</option>
+            }
+
+            </select>
+        </div>
+
+        <br/>
+        <input type="submit" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+        @if(@Model.Message == "success")
+        {
+            <p class="text-success">Succesfully Added!</p>
+        }
+    </form>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Day:</th>
+      <th scope="col">StartTime:</th>
+      <th scope="col">Movie:</th>
+    </tr>
+  </thead>
+   <tbody>
+        @foreach(Showing b in Model.Showings)
+        {
+            <tr>
+                <td>@b.Day</td>
+                <td>@b.StartTime</td>
+                <td>@b.MovieName</td>
+            </tr>
+        }
+        </table>
+</div>
+
+<script>
+    $("#createshowingforum").validate();
+</script>

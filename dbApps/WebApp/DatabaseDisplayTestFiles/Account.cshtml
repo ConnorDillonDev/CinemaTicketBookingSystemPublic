@@ -1,0 +1,19 @@
+@page
+@model WebApp.Pages.AccountModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<html>
+    <head>
+        <title>
+            View account
+        </title>
+    </head>
+    <body>
+        <p>@foreach(Account x in Model.Accounts)
+        {
+            @x.Email<br>
+        }
+        </p>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+@page
+
+@model WebApp.Pages.Create;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<form method="POST">
+<div class="row">
+    <h1 class="display-3">Booking</h1>
+</div>
+<div class="card text-center">
+  <div class="card-header">
+    Confirm Booking
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+        Welcome: {@User.Identity.Name}
+    </h5>
+    <p class="card-text">
+      <h2>@Model.MovieFound</h2> <br/>{Date:@Model.Date, Time:@Model.Time.ToString("n2")}
+
+   
+
+    @* if the rating is <15 in the model hidetickets will be set to false  *@
+    @if(!Model.hideKidTickets)
+    {
+       @* change the float value to a 2dp value *@
+    <label for="AdultTickets">Adult Tickets {$@Model.AdultPrice.ToString("n2")}:</label>
+    <select name="AdultTickets" id="AdultTickets" asp-for="Booking.AdultTickets">
+      @for(int i=0; i<21; i++){
+        <option value=@i>@i</option>
+      }
+    </select>
+
+
+      <label for="childTickets">Child Tickets {$@Model.ChildPrice.ToString("n2")}:</label>
+      <select name="childTickets" id="childTickets" asp-for="Booking.ChildTickets">
+        @for(int i=1; i<21; i++){
+          <option value=@i>@i</option>
+        }
+      </select>
+    }else
+    {
+       @* change the float value to a 2dp value *@
+    <label for="AdultTickets">Adult Tickets {$@Model.AdultPrice.ToString("n2")}:</label>
+    <select name="AdultTickets" id="AdultTickets" asp-for="Booking.AdultTickets">
+      @for(int i=1; i<21; i++){
+        <option value=@i>@i</option>
+      }
+    </select>
+    }
+
+
+    </div>
+    <div>
+      @* navigate back button *@
+      @* if goback is pressed set this value with Jquery *@
+
+      <input asp-for="GoBack" type="hidden" value="" id="GoBack"/> 
+      <button onclick="Back()" class="btn btn-danger">Go back</button>
+
+      
+      <button type="button" id="trigger" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#Modal">Confirm</button>
+    </div>
+    <br/>
+    <div>
+    </div>
+  </div>
+  <div class="card-footer text-muted text-center">
+    Date/Time : @DateTime.Now
+  </div>
+
+<!-- Modal -->
+<div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">Please Confirm</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Movie : @Model.MovieFound
+        <br/>
+        Showing : {Date:@Model.Date, Time:@Model.Time.ToString("n2")}
+        @if(!Model.hideKidTickets)
+        {
+          <div>Kids: <i id="kids"></i> Tickets </div>
+        }
+        <div>Adults: <i id="adults"></i> Tickets </div>
+        <br/>
+        TOTAL :$ <div id="total"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<input type="hidden" id="childprice" value=@Model.ChildPrice/>
+<input type="hidden" id="adultprice" value=@Model.AdultPrice/>
+
+
+<input type="hidden" id="adultsHidden" asp-for="Booking.AdultTickets">
+<input type="hidden" id="kidsHidden"  asp-for="Booking.ChildTickets">
+
+<input type="hidden" id="totalpriceHidden"  asp-for="Booking.TotalPrice">
+<input type="hidden" id="totalTicketsHidden" asp-for="Booking.NumberInBooking"/>
+<input type="hidden"  asp-for="Booking.SuppliedDiscountCode" value=""/>
+<input type="hidden"  asp-for="Booking.ShowingID" value="@Model.ShowingID"/>
+<input type="hidden"  asp-for="Booking.Email" value="@Model.Email"/>
+
+</form>
+
+<script>
+$(document).ready(function () {
+  //set the value of kids to zero if is hidden
+  $("#trigger").click(function(){
+    var k = $("#childTickets").val();
+    if(k != null)
+    {
+      kids = k;
+    }
+    else{
+      kids = 0;
+    }
+
+    //get values
+    var adults = $("#AdultTickets").val();
+    var kidPrice = $("#childprice").val();
+    var adultPrice = $("#adultprice").val();
+
+    //calc totoal price of tickets 
+    var totalAmountTickets = parseInt(adults) + parseInt(kids);
+    //display relevant information 
+    $("#totalTickets").text(totalAmountTickets);
+    $("#adults").text(adults);
+    $("#kids").text(kids);
+
+
+
+    var total = (parseInt(kids) *  parseFloat(kidPrice)) + (parseInt(adults) *  parseFloat(adultPrice));
+
+    total = parseFloat(total).toFixed(2); //change from float to 2 dp
+
+
+    $("#total").text(total);
+    $("#adults").text(adults);
+    $("#kids").text(kids);
+
+
+    $("#totalprice").text(total);
+
+    $("#adultsHidden").val(adults);
+    $("#kidsHidden").val(kids);
+    $("#totalpriceHidden").val(total);
+    $("#totalTicketsHidden").val(totalAmountTickets);
+  });
+});
+
+function Back(){
+  $("#GoBack").val("true");
+}
+</script>

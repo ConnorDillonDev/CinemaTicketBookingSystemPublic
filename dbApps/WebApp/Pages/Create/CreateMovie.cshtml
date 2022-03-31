@@ -1,0 +1,197 @@
+@page
+
+@model WebApp.Pages.CreateMovieModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<div class="row">
+    <h1 class="display-3">Create Movie</h1>
+    <a href="#bottom"><h2>AddMovie</h2></a>
+</div>
+<div class="card">
+    <form id="createM" method="POST">
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">MovieName</th>
+      <th scope="col">RunTime(mins)</th>
+      <th scope="col">Director</th>
+      <th scope="col">Actors</th>
+      <th scope="col">AdultPrice</th>
+      <th scope="col">ChildPrice</th>
+      <th scope="col">Genre</th>
+      <th scope="col">RatingID</th>
+    </tr>
+  </thead>
+   <tbody>
+        @foreach(Movie m in Model.Movies)
+        {
+            <tr>
+                <td>@m.MovieName</td>
+                <td>@m.RunTime</td>
+
+                    @foreach(DirectorsMovieJunction n in Model.DirectorsMovieJunctions)
+                    {
+                        @if(n.MovieName == m.MovieName)
+                        {
+                            foreach(Director d in Model.Directors)
+                            {
+                                @if(d.DirectorID == n.DirectorID)
+                                {
+                                    <td>@d.DirectorName</td>
+                                }
+                            }
+                        }
+                    }
+
+
+                <td>
+
+
+                 @foreach(ActorsMovieJunction n in Model.ActorsMovieJunctions)
+                    {
+                        @if(n.MovieName == m.MovieName)
+                        {
+                            @foreach(Actor d in Model.Actors)
+                            {
+                                @if(d.ActorID == n.ActorID)
+                                {
+                                    @(d.ActorName +',');
+                                }
+                            }
+                        }
+                    }
+                </td>
+
+                <td>$ @m.AdultPrice</td>
+                <td>$ @m.ChildPrice</td>
+
+                @foreach(Genre g in Model.Genres)
+                {
+                    @if(m.GenreID == g.GenreID)
+                    {
+                        <td>@g.GenreName</td>
+                        break;
+                    }
+
+                }
+                @foreach(AgeRating r in Model.AgeRatings)
+                {
+                    @if(m.RatingID == r.RatingID)
+                    {
+                        <td>@r.Age</td>
+                        break;
+                    }
+
+                }
+            </tr>
+        }
+        @* inputs  *@     
+        <tr>       
+            <td>
+                <input asp-for="Movie.MovieName"  id="movieNameInput" required />
+            </td>
+            <td>
+                <input asp-for="Movie.RunTime" required />
+            </td>
+             <td>
+                <input type="hidden" asp-for="DirectorMovieJunction.MovieName" id="DirectorInput"/>
+
+                <select asp-for="DirectorMovieJunction.DirectorID">
+
+                    @for (int c = 0; c < Model.DirectorsList.Count; c++)
+                {
+                    <option value=@Model.DirectorsList[c].DirectorID>@Model.DirectorsList[c].DirectorName</option>
+                }
+                </select>
+            </td>
+            <td>
+                <input type="hidden" asp-for="ActorMovieJunction.MovieName" id="junctionInput"/>
+                <select asp-for="ActorMovieJunction.ActorID">
+
+                    @for (int c = 0; c < Model.ActorsList.Count; c++)
+                {
+                    <option value=@Model.ActorsList[c].ActorID>@Model.ActorsList[c].ActorName</option>
+                }
+                </select>        
+                </td>
+            <td>
+                <input size="5" asp-for="Movie.AdultPrice" value="12.40" required class="float"/>
+            </td>
+            <td>
+                <input size="5" asp-for="Movie.ChildPrice" value="4.20" required class="float" />
+            </td>
+            <td>
+                <select asp-for="Movie.GenreID">
+
+                    @for (int c = 0; c < Model.GenresList.Count; c++)
+                {
+                    <option value=@Model.GenresList[c].GenreID>@Model.GenresList[c].GenreName</option>
+                }
+                </select>
+            </td>
+
+            <td>
+                 <select asp-for="Movie.RatingID">
+
+                    @for (int c = 0; c < Model.AgeRatingsList.Count; c++)
+                {
+                    <option value=@Model.AgeRatingsList[c].RatingID>@Model.AgeRatingsList[c].Age</option>
+                }
+                </select>
+            </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <h3 class="display-9">Movie Description</h3>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="8">
+                    <div id="bottom">
+                    <textarea asp-for="Movie.Description" style="height:100px;width:100%;overflow:auto;border:2px solid black;"></textarea>
+                @if(@Model.SuccessfullyAdded == true) // added succesfully
+                {
+                    <p class="text-success">Added Successfully!</p> 
+                }
+                
+                @if(@Model.message == "Invalid") // invalid model 
+                {
+                    <p class="text-danger">Unexpected Data!</p>
+                }
+                else if(@Model.message == "error") //trigger if PK has been used twice
+                {
+                    <p class="text-danger">Movie Already Exists!</p>
+                }
+                    <input type="submit" onclick="grabData()" value="Submit" class="btn btn-success" /> <a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+                    
+
+                    </div>
+                </td>
+            </tr>
+        </table>
+        </form>
+
+</div>
+
+
+<script>
+    function grabData(){
+          var name = document.getElementById("movieNameInput").value;
+          document.getElementById("junctionInput").value = name;
+          
+          document.getElementById("DirectorInput").value = name;
+          console.log(name);
+    }
+
+
+
+    $('.float').keypress(function(event) {
+        console.log("must be a number");
+  if ((event.which != 46 || $(this).val().indexOf('.') != -1) && (event.which < 48 || event.which > 57)) { //prevent alphabetical text 
+    event.preventDefault();
+  }
+});
+</script>

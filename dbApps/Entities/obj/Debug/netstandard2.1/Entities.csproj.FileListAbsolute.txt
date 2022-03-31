@@ -1,0 +1,5 @@
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\Entities\obj\Debug\netstandard2.1\Entities.csproj.AssemblyReference.cache
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\Entities\obj\Debug\netstandard2.1\Entities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\Entities\obj\Debug\netstandard2.1\Entities.AssemblyInfoInputs.cache
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\Entities\obj\Debug\netstandard2.1\Entities.AssemblyInfo.cs
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystem\dbApps\Entities\obj\Debug\netstandard2.1\Entities.csproj.CoreCompileInputs.cache

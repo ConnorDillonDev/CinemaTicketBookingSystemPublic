@@ -1,0 +1,153 @@
+@page
+@model WebApp.Pages.IndexModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+
+<div id="carouselControls" class="carousel slide" data-bs-ride="carousel" style="height:300px">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <a href="#">
+      <img src="/place.png" class="d-block w-100" alt="carouselImage1" style="height:300px">
+    </a>
+        <div class="carousel-caption d-none d-md-block">
+            <h5>IMAGE 1</h5>
+            <p>Description</p>
+        </div>
+    </div>
+    <div class="carousel-item">
+    <a href="#">
+      <img src="/place.png" class="d-block w-100" alt="carouselImage2" style="height:300px">
+      </a>
+        <div class="carousel-caption d-none d-md-block">
+            <h5>IMAGE 2</h5>
+            <p>Description</p>
+        </div>
+    </div>
+    
+    <div class="carousel-item">
+      <a href="#">
+      <img src="/place.png" class="d-block w-100" alt="carouselImage3" style="height:300px">
+      </a>
+        <div class="carousel-caption d-none d-md-block">
+            <h5>IMAGE 3</h5>
+            <p>Description</p>
+        </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+@{int counter = 1;}
+<br/>
+<form method="post">
+    <div style="float:right">
+        <input type="hidden" asp-for="route" value="sort"/>
+        <button type="submit" class="btn btn-primary float-right">Sort By Age Rating</button>
+    </div>
+</form>
+<br/>
+@foreach(Movie m in Model.Movies){
+    <br/>
+      <div class="card flex-row flex-wrap">
+        <div class="card-header border-0">
+
+                @if(@counter > @Model.IMAGESOURCECOUNT){
+                    <p>IMAGE NOT FOUND</p>
+                }             
+                else
+                {
+                    <img src=@Model.imagesources[counter] alt="image of movie " style="height:300px">
+                }
+                
+        </div>
+        <div class="card-block px-2">
+        
+            <h4 class="card-title">@m.MovieName
+                @foreach(AgeRating AR in Model.Ratings)
+                {
+                    if(AR.RatingID == m.RatingID)
+                    {
+                        var imagePath = @"/" + AR.Age +".png";
+                        <img style="height: 40px; width: 40px" src=@imagePath alt="image rating">
+                        break;
+                    }
+                }
+            </h4>
+                <p class="card-text table-row">
+
+                    <div class="float-right" style="width:100%; height:30px">
+                        @{
+                            string trim = m.Description;
+                            try
+                            {
+                                trim = trim.Substring(0,130);
+                            }
+                            catch
+                            {}
+                        }
+                        @trim;
+                    </div>
+                    
+                    @foreach(Genre g in Model.Genres)
+                {
+                    if(g.GenreID == m.GenreID)
+                    {
+                        
+                        <br/>
+                        <p class="text-muted">Genre: <i class="text-dark">@g.GenreName</i></p>
+                        <p class="text-muted">Runtime: <i class="text-dark">
+
+                            @{
+                                int hours = @m.RunTime/60;
+                                int mins = @m.RunTime % 60;
+                            }
+                            
+                            @hours hours & @mins minutes
+                            
+                            
+                            </i></p>
+
+                        break;
+
+                    }
+                }
+            <div style="width: 70%;">
+                <form method="POST">
+                    @foreach(Showing s in Model.Showings)
+                    {
+
+                        if(m.MovieName == s.MovieName)
+                        {
+                            <button name="ShowingID" type="submit" value="@s.ShowingID" class="btn btn-primary" style="margin-right: 10px; margin-bottom: 10px;">   
+                                @{
+                                    string outString= s.StartTime.ToString("####0.00");
+                                    outString = outString.Replace(".",":");
+                                }
+                                @outString
+
+                            </button>
+                        } 
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+    counter = counter +1;
+
+}
+<script>
+$(document).ready(function() {
+    $('.carousel').carousel({
+  interval: 2000
+})
+})
+</script>

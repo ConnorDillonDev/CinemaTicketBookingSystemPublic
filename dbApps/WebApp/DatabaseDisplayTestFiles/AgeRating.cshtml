@@ -1,0 +1,20 @@
+@page
+@model WebApp.Pages.AgeRatingModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<html>
+    <head>
+        <title>
+            View AgeRating
+        </title>
+    </head>
+    <body>
+        <p>@foreach(AgeRating x in Model.AgeRatings)
+        {
+            @x.RatingID<br>
+            @x.Age<br>
+        }
+        </p>
+    </body>
+</html>

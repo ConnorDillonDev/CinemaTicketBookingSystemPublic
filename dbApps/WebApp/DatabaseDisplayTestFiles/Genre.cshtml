@@ -1,0 +1,19 @@
+@page
+@model WebApp.Pages.GenreModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+<html>
+    <head>
+        <title>
+            View Genre
+        </title>
+    </head>
+    <body>
+        <p>@foreach(Genre x in Model.Genres)
+        {
+            @x.GenreName<br>
+        }
+        </p>
+    </body>
+</html>

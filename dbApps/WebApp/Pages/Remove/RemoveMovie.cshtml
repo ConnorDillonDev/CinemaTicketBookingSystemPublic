@@ -1,0 +1,120 @@
+@page
+
+@model WebApp.Pages.RemoveMovie;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-5">Search Movie To Remove</h1>
+    
+</div>
+                        <a class="btn btn-primary mx-1" href="../Staff/Manage">   Go Back   </a>
+
+<div class="card">
+    <form method="post">
+        <div class="input-group mb-3">
+            <input class="form-control" placeholder="MovieName" asp-for="SearchID" required>
+            <button type="submit" class="btn btn-success">Search</button>
+        </div>
+
+    </form>
+        
+
+    @if(@Model.message == "Not Found!")
+    {
+        <p class="text-warning">Not Found!</p>
+    }
+    else if (@Model.message == "Removed")
+    {
+        <p class="text-success">Removed</p>
+    }
+
+
+    <div id="ReturnedShowing">
+        @if(Model.TargetID != null)
+        {
+            <form method="post">
+                <h3>Found:</h3>
+                <table class="table">
+                <thead>
+                <tr>
+                        <th scope="col">MovieName</th>
+                        <th scope="col">RunTime</th>
+                        <th scope="col">Adult Price</th>
+                        <th scope="col">Child Price</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td >@Model.MovieSearch.MovieName</td>
+                        <input type="hidden" asp-for="MovieToDel.MovieName" value="@Model.MovieSearch.MovieName">
+
+
+                        <td>@Model.MovieSearch.RunTime</td>
+                        <input type="hidden" asp-for="MovieToDel.RunTime" value="@Model.MovieSearch.RunTime">
+
+
+                        <input type="hidden" asp-for="MovieToDel.Description" value="@Model.MovieSearch.Description">
+
+
+                        <td>@Model.MovieSearch.AdultPrice</td>
+                        <input type="hidden" asp-for="MovieToDel.AdultPrice" value="@Model.MovieSearch.AdultPrice">
+
+                        <td>@Model.MovieSearch.ChildPrice</td>
+                        <input type="hidden" asp-for="MovieToDel.ChildPrice" value="@Model.MovieSearch.ChildPrice">
+
+                        <td><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+                    </tr>
+                </table>
+            </form>
+        }
+    </div>
+</div>
+
+<div class="card">
+        <h1 class="display-3">All Movies</h1>
+
+
+        @{int counter = 0;}
+        @foreach(Movie s in Model.Movies)
+        {
+
+
+            counter = counter + 1;
+            <form method="post">
+            <table class="table table-bordered table-hover p-5">
+            @if (counter == 1)
+            {
+                <thead>
+                    <tr>
+                        <th scope="col">MovieName</th>
+                        <th scope="col">RunTime (mins)</th>
+                        <th scope="col">Adult Price</th>
+                        <th scope="col">Child Price</th>
+                    </tr>
+                </thead>
+            }
+
+            <tr>
+                <td style="width: 150px;">@s.MovieName<input type="hidden" asp-for="MovieToDel.MovieName" value="@s.MovieName"></td>
+                
+
+                <td style="width: 150px;">@s.RunTime (mins)<input type="hidden" asp-for="MovieToDel.RunTime" value="@s.RunTime"></td>
+                
+
+                
+
+                <td style="width: 150px;">@s.AdultPrice<input type="hidden" asp-for="MovieToDel.AdultPrice" value="@s.AdultPrice"></td>
+                
+
+                
+                <td style="width: 150px;">@s.ChildPrice<input type="hidden" asp-for="MovieToDel.ChildPrice" value="@s.ChildPrice"><input type="hidden" asp-for="MovieToDel.Description" value="@s.Description"></td>
+                
+                
+                <td style="width: 150px;"><button type="submit" class="btn btn-outline-warning">Delete</button></td>
+            </tr>
+            </table>
+        </form>
+        }
+</div>
