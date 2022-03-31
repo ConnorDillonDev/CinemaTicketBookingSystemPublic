@@ -17,12 +17,12 @@
         <br />
         <div>
             <p>Street Name:</p>
-            <input asp-for="Building.Street"required />
+            <input id="street" asp-for="Building.Street"required />
         </div>
         <br />
         <div>
             <p>Street Number:</p>
-            <input asp-for="Building.StreetNum"required />
+            <input id="number" asp-for="Building.StreetNum"required />
         </div>
         <br />
         <div>
@@ -30,12 +30,11 @@
             <input asp-for="Building.PostCode"required />
         </div>
         <div>
-            <p>Building Full Address:</p>
-            <input asp-for="Building.Address" required />
+            <input type="hidden" asp-for="Building.Address" id="addressF" required />
         </div>
         <br />
 
-        <input type="submit" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+        <input type="submit" onclick="concat()" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
         @if(Model.PostResult == "added"){
             <p class="text-success">Added Successfully</p>
         }
@@ -64,3 +63,15 @@
         }
         </table>
 </div>
+
+<script> 
+    //concat two string and set as the full address
+    function concat()
+    {
+        console.log("I run");
+
+        var street = $("#street").val();
+        var number = $("#number").val();
+        $("#addressF").val(street + " " + number);
+    }
+</script>

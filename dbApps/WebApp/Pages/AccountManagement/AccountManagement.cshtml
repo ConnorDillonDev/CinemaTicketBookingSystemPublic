@@ -56,7 +56,7 @@
                 <tr>
                     <td><input type="hidden" value="@Model.AccountFound.Email" asp-for="UpdateAccount.Email" required/>@Model.AccountFound.Email</td>
                     <td><input value="@Model.AccountFound.Username" asp-for="UpdateAccount.Username" required/></td>
-                    <td><input value="@Model.AccountFound.PasswordHash" asp-for="UpdateAccount.PasswordHash" required/></td>
+                    <td><input value="@Model.AccountFound.PasswordHash" type="password" asp-for="UpdateAccount.PasswordHash" required/></td>
                     <td><input value="@Model.AccountFound.FirstName" asp-for="UpdateAccount.FirstName" required/></td>
                     <td><input value="@Model.AccountFound.LastName" asp-for="UpdateAccount.LastName" required/></td>
                     <td><input value="@Model.AccountFound.FullName" asp-for="UpdateAccount.FullName"required /></td>
@@ -83,8 +83,4 @@
     }
 <script>
 $("#update").validate();
-
-var passwordOnGet  = $("#")
-
-$("#sanityCheck").value();
 </script>

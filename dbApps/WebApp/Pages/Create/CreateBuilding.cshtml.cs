@@ -41,7 +41,6 @@ namespace WebApp.Pages
 
         public IActionResult OnPost()
         {   
-
             if (ModelState.IsValid){ 
                 try{
                     //add new building to the database
