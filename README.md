@@ -52,7 +52,7 @@ https://www.youtube.com/watch?v=KKyfqA224yQ
 ### Sample Accounts
 
 Example of accounts,  in order of highest permissions to lowest.
-* Passwords not suitable for deployment *
+*Passwords not suitable for deployment*
 ```
 SuperUser996@cinema.com : password 
 StaffUser@gmail.com : password
