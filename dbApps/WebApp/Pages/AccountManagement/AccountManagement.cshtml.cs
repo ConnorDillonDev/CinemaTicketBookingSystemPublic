@@ -71,6 +71,10 @@ namespace WebApp.Pages
         public Account UpdateAccount { get; set; }
 
 
+        [BindProperty]
+        public string SanityCheck { get; set; }
+
+
         public IActionResult OnPost()
         {            
               if(AccountEmail != null && route is null){
@@ -101,8 +105,13 @@ namespace WebApp.Pages
                 account.IsStaff = UpdateAccount.IsStaff;
 
                 // pass password through the bcrypt function
-                string updatepasswordHash = BCrypt.Net.BCrypt.HashPassword(account.PasswordSalt + UpdateAccount.PasswordHash);
-                account.PasswordHash = updatepasswordHash;
+                //only encrypt password if it has been changed 
+                if(SanityCheck != UpdateAccount.PasswordHash)
+                {
+                    string updatepasswordHash = BCrypt.Net.BCrypt.HashPassword(account.PasswordSalt + UpdateAccount.PasswordHash);
+                    account.PasswordHash = updatepasswordHash;
+                }
+
  
                 //save account update
                 db.Accounts.Update(account);

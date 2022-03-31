@@ -68,6 +68,9 @@
             <div class="col-md-12 text-center">
                 <button style="center" type="submit" class="btn btn-warning">update</button>
             </div>
+            @* sanity check to make sure that the hashed password is not passed through the hashing process again when it has not been updated
+            as this will lock the user out of their accounts *@
+            <input id="sanityCheck" type="hidden" value="@Model.AccountFound.PasswordHash" asp-for="SanityCheck"/>
     </form>
     }
     else if(@Model.NotFound == true)
@@ -80,4 +83,8 @@
     }
 <script>
 $("#update").validate();
+
+var passwordOnGet  = $("#")
+
+$("#sanityCheck").value();
 </script>
