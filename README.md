@@ -14,12 +14,12 @@ How to install the Dotnet & Python projects.
 ### Dotnet
 
 Release can be found at:
-```bash
+```
 CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\WebApp.exe
 ```
 
 Run from development enviroment (Visual Studio Code):
-```bash
+```
  - .NET 6.0 SDK(V6.0) must be installed (https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-6.0.201-windows-x64-installer)
  - File>Open Workspace from File
  - Naivtate to 'CinemaTicketBookingSystemPublic\dbApps\dbapps.code-workspace'
@@ -34,7 +34,7 @@ Run from development enviroment (Visual Studio Code):
 
 ### Python
 Run from development enviroment (PyCharm):
-```bash
+```
   - Python3 must be installed (https://www.python.org/downloads/)
   - PyCharm File>Open>CinemaTicketBookingSystemPublic\Python QR Scanner
   - File>Settings>Python Interpreter> '+' > search 'pip' > install package
@@ -48,7 +48,7 @@ Run from development enviroment (PyCharm):
 ## Demonstration
 
 Example of the code operating can be found at:
-```javascript
+```
 https://www.youtube.com/watch?v=KKyfqA224yQ
 ```
 
