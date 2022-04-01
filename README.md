@@ -39,7 +39,7 @@ Run from development enviroment (PyCharm):
   - Run the following command : "pip install -r requirements.txt"
   - Run main
 ```
-  *Note: Camera used for testing is a usb webcam of the bran Aukey*
+  *Note: Camera used for testing is a usb webcam of the brand Aukey*
 
     
 ## Demonstration
