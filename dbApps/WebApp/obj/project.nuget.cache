@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "60h3rfDW76+EZtnsi429zljBpMd+uAzFkFQf9pT47V3J128/22PkuhwKJv4h88//35LBAgV5ylANQ6gI1AxiZw==",
+  "dgSpecHash": "BNaf5PRsckyFHOeJvemHfGxeTzt5DUYCCPN1z9MGaX20qDz4CO1s5vQnRzA/mv+MiSm9FUtcix1g2KxrxM+hQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\WebApp.csproj",
   "expectedPackageFiles": [
@@ -78,7 +78,10 @@
     "C:\\Users\\conno\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
     "C:\\Users\\conno\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
     "C:\\Users\\conno\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.1\\system.threading.tasks.extensions.4.5.1.nupkg.sha512",
-    "C:\\Users\\conno\\.nuget\\packages\\webgrease\\1.5.2\\webgrease.1.5.2.nupkg.sha512"
+    "C:\\Users\\conno\\.nuget\\packages\\webgrease\\1.5.2\\webgrease.1.5.2.nupkg.sha512",
+    "C:\\Users\\conno\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.1\\microsoft.netcore.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\conno\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.1.nupkg.sha512",
+    "C:\\Users\\conno\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.1\\microsoft.aspnetcore.app.runtime.win-x64.6.0.1.nupkg.sha512"
   ],
   "logs": [
     {
