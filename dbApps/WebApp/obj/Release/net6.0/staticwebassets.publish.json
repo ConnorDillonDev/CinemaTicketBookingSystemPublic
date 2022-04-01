@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BAeyF5/8ojUbKPf08VYY2JPR+JWynzgaowHLkZ094M8=",
+  "Hash": "zpb05GfOt5EQ727p0yC8fpQeXRz/b3l/GuWSlSMqpm4=",
   "Source": "WebApp",
   "BasePath": "_content/WebApp",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "WebApp\\wwwroot",
       "Source": "WebApp",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\12.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\12.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "12.png",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\12.png"
     },
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\15.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\15.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "15.png",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\15.png"
     },
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\18.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\18.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "18.png",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\18.png"
     },
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\PG.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\PG.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "PG.png",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\PG.png"
     },
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\place.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\place.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "place.png",
       "AssetKind": "All",
@@ -102,10 +102,10 @@
       "OriginalItemSpec": "wwwroot\\place.png"
     },
     {
-      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\U.png",
+      "Identity": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\U.png",
       "SourceId": "WebApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystem\\dbApps\\WebApp\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\WebApp\\wwwroot\\",
       "BasePath": "_content/WebApp",
       "RelativePath": "U.png",
       "AssetKind": "All",
