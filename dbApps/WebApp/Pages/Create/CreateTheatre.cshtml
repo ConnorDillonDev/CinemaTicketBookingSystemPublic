@@ -1,0 +1,61 @@
+@page
+
+@model WebApp.Pages.CreateTheatreModel;
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@using UWS.CinemaTicketBookingSystem;
+
+
+<div class="row">
+    <h1 class="display-3">Create Theatre</h1>
+</div>
+<div class="card">
+    <p>Theatre Screen Number:</p>
+    <form method="POST">
+        <div>
+            <input asp-for="Theatre.ScreenNum" required />
+        </div>
+        <div>
+           <p>Theatre Complex Name:</p>
+            <select asp-for="Theatre.ComplexName" name="Theatre.ComplexName" id="Theatre.ComplexName">
+               @for (int c = 0; c < Model.Buildings.Count; c++)
+              {
+                //list of all the current complexes in the database
+                <option value=@Model.Buildings[c].ComplexName>@Model.Buildings[c].ComplexName</option>
+              }
+            </select>
+        </div>
+        <br />
+
+        <input type="hidden" asp-for="Theatre.Capacity" value=100/>
+
+        <input type="submit" class="btn btn-success mx-1" /><a class="btn btn-primary" href="../Staff/Create">   Go Back   </a>
+        @if(Model.PostResult == "added"){
+            <p class="text-success">Added Successfully</p>
+        }
+        else if(Model.PostResult == "dup")
+        {
+            {<p class="text-danger"> Cannot use and existing screen number,<br/> This is used globally to identify all of the theatres the cinema chain owns. </p>}
+        }
+        else if(Model.PostResult == "invalid")
+        {<p class="text-danger">Invalid Submission</p>}
+        
+    </form>
+
+    <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Screen Number</th>
+      <th scope="col">ComplexName</th>
+    </tr>
+  </thead>
+   <tbody>
+       @* iterate over all direcors to show them on page *@
+        @foreach(Theatre t in Model.Theatres)
+        {
+            <tr>
+                <td>@t.ScreenNum</td>
+                <td>@t.ComplexName</td>
+            </tr>
+        }
+        </table>
+</div>

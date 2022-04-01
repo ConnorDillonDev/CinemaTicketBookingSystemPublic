@@ -70,11 +70,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
-      },
-      "runtimes": {
-        "win10-x64": {
-          "#import": []
-        }
       }
     },
     "C:\\Users\\conno\\Documents\\GitHub\\CinemaTicketBookingSystemPublic\\dbApps\\Entities\\Entities.csproj": {
@@ -150,11 +145,6 @@
             }
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win10-x64": {
-          "#import": []
         }
       }
     }

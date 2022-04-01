@@ -8,12 +8,9 @@ namespace UWS.CinemaTicketBookingSystem
     {
         //map columns
         [Key]
-        [MaxLength(700)]
         [Required()]
         public int ScreenNum { get; set; }
         
-        [MaxLength(160)]
-        [Required()]
         public string Capacity { get; set; }
 
         [MaxLength(40)]
