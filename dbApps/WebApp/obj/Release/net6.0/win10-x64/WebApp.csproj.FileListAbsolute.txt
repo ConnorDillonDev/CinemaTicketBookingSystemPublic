@@ -798,3 +798,9 @@ C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\ob
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Release\net6.0\win10-x64\ref\WebApp.dll
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Release\net6.0\win10-x64\WebApp.pdb
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Release\net6.0\win10-x64\WebApp.genruntimeconfig.cache
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\12.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\15.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\18.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\PG.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\place.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Release\net6.0\win10-x64\wwwroot\U.png
