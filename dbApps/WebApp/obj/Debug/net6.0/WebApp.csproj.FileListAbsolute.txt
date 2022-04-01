@@ -130,3 +130,9 @@ C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\ob
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Debug\net6.0\ref\WebApp.dll
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Debug\net6.0\WebApp.pdb
 C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\obj\Debug\net6.0\WebApp.genruntimeconfig.cache
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\12.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\15.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\18.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\PG.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\place.png
+C:\Users\conno\Documents\GitHub\CinemaTicketBookingSystemPublic\dbApps\WebApp\bin\Debug\net6.0\wwwroot\U.png

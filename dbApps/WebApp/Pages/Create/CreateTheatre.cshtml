@@ -12,7 +12,7 @@
     <p>Theatre Screen Number:</p>
     <form method="POST">
         <div>
-            <input asp-for="Theatre.ScreenNum" required />
+            <input min="1" asp-for="Theatre.ScreenNum" required />
         </div>
         <div>
            <p>Theatre Complex Name:</p>
