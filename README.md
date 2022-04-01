@@ -1977,6 +1977,7 @@ WebApp
  ┃ ┃ ┃ ┃ ┣ .NETCoreApp,Version=v6.0.AssemblyAttributes.cs
  ┃ ┃ ┃ ┃ ┣ apphost.exe
  ┃ ┃ ┃ ┃ ┣ PublishOutputs.b68852071b.txt
+ ┃ ┃ ┃ ┃ ┣ PublishOutputs.c964bbab9a.txt
  ┃ ┃ ┃ ┃ ┣ WebApp.AssemblyInfo.cs
  ┃ ┃ ┃ ┃ ┣ WebApp.AssemblyInfoInputs.cache
  ┃ ┃ ┃ ┃ ┣ WebApp.assets.cache
@@ -2032,7 +2033,9 @@ WebApp
  ┃ ┃ ┣ CreateMovie.cshtml
  ┃ ┃ ┣ CreateMovie.cshtml.cs
  ┃ ┃ ┣ CreateShowing.cshtml
- ┃ ┃ ┗ CreateShowing.cshtml.cs
+ ┃ ┃ ┣ CreateShowing.cshtml.cs
+ ┃ ┃ ┣ CreateTheatre.cs
+ ┃ ┃ ┗ CreateTheatre.cshtml
  ┃ ┣ FAQ
  ┃ ┃ ┣ FAQ.cs
  ┃ ┃ ┗ FAQ.cshtml
@@ -2040,6 +2043,7 @@ WebApp
  ┃ ┃ ┣ Login.cshtml
  ┃ ┃ ┗ Login.cshtml.cs
  ┃ ┣ Logout
+ ┃ ┃ ┣ Logout.cshtml
  ┃ ┃ ┗ Logout.cshtml.cs
  ┃ ┣ Remove
  ┃ ┃ ┣ RemoveBookingCustomer.cshtml
@@ -2049,7 +2053,9 @@ WebApp
  ┃ ┃ ┣ RemoveMovie.cs
  ┃ ┃ ┣ RemoveMovie.cshtml
  ┃ ┃ ┣ RemoveShowing.cshtml
- ┃ ┃ ┗ RemoveShowing.cshtml.cs
+ ┃ ┃ ┣ RemoveShowing.cshtml.cs
+ ┃ ┃ ┣ RemoveTheatre.cshtml
+ ┃ ┃ ┗ RemoveTheatre.cshtml.cs
  ┃ ┣ Shared
  ┃ ┃ ┣ style.css
  ┃ ┃ ┣ _Layout.cshtml
