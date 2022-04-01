@@ -1,3 +1,4 @@
+//link to index page - serverside code - runs when requested by client
 using System.Collections;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Collections.Generic;
@@ -11,17 +12,20 @@ using System.Security.Claims;
 using System.Web;
 using Microsoft.AspNetCore.Authentication;
 
-
 namespace WebApp.Pages
 {
     public class LogoutModel : PageModel
     {
-        //!! not working need to destory the cookie
-        public async Task<IActionResult> OnPostAsync(){
-            // await HttpContext.SignOutAsync();
-            // HttpContext.Response.Cookies.Remove("MyCookieAuth");
-            return RedirectToPage("../");
-        }
 
+        public IActionResult OnGet()  //when the page is called (logout button requests this method)
+        {
+            
+            foreach(var cookie in Request.Cookies.Keys)
+            {
+                Response.Cookies.Delete(cookie); //Logout the user out by  removing the cookies 
+            }
+            return RedirectToPage("/Login/Login");
+
+        }
     }
 }
